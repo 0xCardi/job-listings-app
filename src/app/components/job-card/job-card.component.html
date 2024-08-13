@@ -1,0 +1,15 @@
+<div class="job-card" *ngIf="isValidJob()" role="article" aria-label="Job listing">
+    <h2 class="job-title">{{ job.position }}</h2>
+    <div class="company-name">{{ job.company }}</div>
+    <div class="job-details">
+      <p><strong>Location:</strong> {{ job.location || 'Not specified' }}</p>
+      <p><strong>Salary:</strong> {{ getSalaryRange() }}</p>
+      <p><strong>Posted:</strong> {{ job.date | date:'mediumDate' }}</p>
+      <p><a href="https://remoteok.com/remote-jobs/{{ job.slug }}">Apply now</a></p>
+    </div>
+    <div class="tags-container">
+      @for (tag of job.tags; track tag) {
+        <span class="tag" role="listitem">{{ tag }}</span>
+      }
+    </div>
+  </div>

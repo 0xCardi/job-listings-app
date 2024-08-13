@@ -1,13 +1,22 @@
+// app.component.ts
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { JobListComponent } from './components/job-list/job-list.component';
+import { JobService } from './services/job.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [CommonModule, JobListComponent],
+  template: `
+    <h1>Remote Job Listings</h1>
+    <app-job-list></app-job-list>
+  `,
+  styles: [`
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+    }
+  `]
 })
-export class AppComponent {
-  title = 'job-listings-app';
-}
+export class AppComponent {}

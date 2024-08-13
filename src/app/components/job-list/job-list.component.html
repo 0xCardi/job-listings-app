@@ -1,0 +1,22 @@
+<div class="job-list-container">
+  <div class="search-container">
+    <input 
+      type="text" 
+      [(ngModel)]="searchText" 
+      placeholder="Search jobs..." 
+      class="search-input"
+    >
+  </div>
+
+  <div class="job-list">
+    @for (job of jobs | filterJobs:searchText; track job.id) {
+      <app-job-card [job]="job"></app-job-card>
+    }
+  </div>
+
+  @if ((jobs | filterJobs:searchText).length === 0) {
+    <div class="no-results">
+      No jobs found matching your search.
+    </div>
+  }
+</div>

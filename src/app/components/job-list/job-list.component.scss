@@ -1,0 +1,36 @@
+.job-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .search-container {
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .job-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .no-results {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-top: 40px;
+  }
+  
+  @media (max-width: 768px) {
+    .job-list {
+      grid-template-columns: 1fr;
+    }
+  }
