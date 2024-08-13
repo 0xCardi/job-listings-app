@@ -1,4 +1,3 @@
-// job.model.ts
 export interface Job {
   id: string;
   slug: string;
